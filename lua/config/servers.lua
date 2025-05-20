@@ -9,7 +9,9 @@ local lspServers = {
 	"svelte",
 	"clojure_lsp",
 	"rust_analyzer",
-  "llm-ls"
+  "pylsp",
+  "jsonls",
+  "kotlin_language_server",
 }
 
 
@@ -42,6 +44,8 @@ local tsEnsureInstalled = {
 	"svelte",
 	"css",
 	"scss",
+  "kotlin",
+  "json",
 }
 
 return {

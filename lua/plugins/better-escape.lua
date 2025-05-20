@@ -2,7 +2,16 @@ return { -- lua with lazy.nvim
 	{
 		"max397574/better-escape.nvim",
 		config = function()
-			require("better_escape").setup()
+			require("better_escape").setup({
+        default_mappings = true,
+        mappings = {
+          v = {
+            j = {
+              k = false
+            }
+          }
+        }
+      })
 		end,
 	},
 }

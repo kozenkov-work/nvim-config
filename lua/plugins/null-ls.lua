@@ -25,6 +25,7 @@ return {
 				nls.builtins.formatting.stylua,
 				nls.builtins.formatting.prettier,
 				nls.builtins.formatting.cljfmt,
+        nls.builtins.formatting.ktlint
 			})
 
 			-- opts.on_attach = function(client, bufnr)
