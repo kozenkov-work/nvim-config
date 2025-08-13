@@ -57,6 +57,29 @@ return {
           "<leader>o",
           group = "NeoTree",
         },
+        -- git --
+        {
+          "<leader>g",
+          group = "Git"
+        },
+        {
+          "<leader>gj",
+          function()
+            vim.cmd('Git next_hunk')
+          end,
+        },
+        {
+          "<leader>gk",
+          function()
+            vim.cmd('Git prev_hunk')
+          end,
+        },
+        {
+          "<leader>gb",
+          function()
+            vim.cmd('Git blame')
+          end,
+        },
 			})
 		end,
 		keys = {

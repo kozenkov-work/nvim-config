@@ -4,7 +4,7 @@ local lspServers = {
 	"clangd",
 	"serve_d",
 	"cssls",
-	"html",
+	"ast_grep",
 	"volar",
 	"svelte",
 	"clojure_lsp",
@@ -12,25 +12,12 @@ local lspServers = {
   "pylsp",
   "jsonls",
   "kotlin_language_server",
+  "emmet_ls"
 }
 
-
-
-local mason_registry = require("mason-registry")
+-- local mason_registry = require("mason-registry")
 local lspInitOptions = {
-	volar = {
-		vue = {
-			hybridMode = false,
-		},
-	},
 	ts_ls = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = mason_registry.get_package("vue-language-server"):get_install_path(),
-				languages = { "vue" },
-			},
-		},
 	},
 }
 
@@ -46,6 +33,7 @@ local tsEnsureInstalled = {
 	"scss",
   "kotlin",
   "json",
+  "haskell"
 }
 
 return {
