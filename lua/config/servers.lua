@@ -12,7 +12,8 @@ local lspServers = {
   "pylsp",
   "jsonls",
   "kotlin_language_server",
-  "emmet_ls"
+  "emmet_ls",
+  "omnisharp"
 }
 
 -- local mason_registry = require("mason-registry")
@@ -33,7 +34,8 @@ local tsEnsureInstalled = {
 	"scss",
   "kotlin",
   "json",
-  "haskell"
+  "haskell",
+  "c_sharp"
 }
 
 return {
