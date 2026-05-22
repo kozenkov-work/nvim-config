@@ -23,6 +23,9 @@ return {
 						hide_gitignored = false,
 						hide_by_pattern = {
 							"*.meta",
+              "*.idx",
+              "*.pack",
+              "*.rev"
 						},
 					},
 				},
