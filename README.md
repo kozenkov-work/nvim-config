@@ -20,5 +20,5 @@ git clone git@github.com:Vafil42/nvim-config.git ~/.config/nvim
 Or with https for using
 
 ```bash
-git clone https://github.com/Vafil42/astronvim-template.git ~/.config/nvim
+git clone https://github.com/Vafil42/nvim-config.git ~/.config/nvim
 ```
