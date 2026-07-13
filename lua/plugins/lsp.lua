@@ -13,17 +13,12 @@ return {
 		},
 
 		init = function()
-			local lspconfig = require("lspconfig")
-			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 			local servers = require("config.servers").lspServers
 			local init_options = require("config.servers").lspInitOptions
 
 			for _, lsp in ipairs(servers) do
-				lspconfig[lsp].setup({
+				vim.lsp.config(lsp, {
 					init_options = init_options[lsp],
-					-- on_attach = my_custom_on_attach,
-					capabilities = lsp_capabilities,
 				})
 			end
 

@@ -4,4 +4,5 @@ return {
 	init = function()
 		require("config.highlight")
 	end,
+  -- enabled=false,
 }
