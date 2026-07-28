@@ -1,22 +1,34 @@
 return {
-  { 'nvim-treesitter/nvim-treesitter',
-    branch = 'main',
-    lazy = false,
-    init = function()
-      vim.g.loaded_nvim_treesitter = 1
-    end,
-  },
-  { 'lewis6991/ts-install.nvim',
-    -- OPTIONAL
-    config = function()
-      require('ts-install').setup({
-        ensure_install = {
-          'lua',
-          'c',
-          'bash',
-          -- etc
-        },
-      })
-    end
-  }
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+
+		config = function()
+			require("nvim-treesitter").setup({})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				group = vim.api.nvim_create_augroup("tree-sitter-enable", { clear = true }),
+				callback = function(args)
+					local lang = vim.treesitter.language.get_lang(args.match)
+					if not lang or not vim.treesitter.language.add(lang) then
+						return
+					end
+
+					if vim.treesitter.query.get(lang, "highlights") then
+						vim.treesitter.start(args.buf)
+					end
+
+					-- if vim.treesitter.query.get(lang, "indents") then
+					-- 	vim.opt_local.indentexpr = 'v:lua.require("nvim-treesitter").indentexpr()'
+					-- end
+					--
+					-- if vim.treesitter.query.get(lang, "folds") then
+					-- 	vim.opt_local.foldmethod = "expr"
+					-- 	vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					-- end
+				end,
+			})
+		end,
+	}
 }

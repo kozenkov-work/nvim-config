@@ -26,7 +26,7 @@ return {
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
-			preset = "enter",
+			preset = "default",
 			["<Tab>"] = { "select_next", "fallback" },
 		},
 
@@ -43,7 +43,7 @@ return {
 				border = "single",
 				draw = { columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } } },
 			},
-			ghost_text = { enabled = true },
+			ghost_text = { enabled = false },
 		},
 
 		-- Default list of enabled providers defined so that you can extend it
